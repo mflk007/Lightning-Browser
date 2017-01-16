@@ -15,7 +15,7 @@ android {
 
     sourceSets {
         lightningPlus.setRoot('src/LightningPlus')
-        lightningLite.setRoot('src/LightningLite')
+//        lightningLite.setRoot('src/LightningLite')
     }
 
     signingConfigs {
@@ -31,13 +31,17 @@ android {
         debug {
             minifyEnabled false
             shrinkResources false
+            zipAlignEnabled false
             proguardFiles 'proguard-project.txt'
+            signingConfig signingConfigs.release
         }
 
         release {
             minifyEnabled true
             shrinkResources true
+            zipAlignEnabled true
             proguardFiles 'proguard-project.txt'
+            signingConfig signingConfigs.release
         }
     }
 
