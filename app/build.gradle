@@ -18,6 +18,15 @@ android {
         lightningLite.setRoot('src/LightningLite')
     }
 
+    signingConfigs {
+        release {
+            storeFile file("linzb_keystore.jks")
+            storePassword "linzhibiao"
+            keyAlias "linzhibiao"
+            keyPassword "linzhibiao"
+        }
+    }
+
     buildTypes {
         debug {
             minifyEnabled false
@@ -39,11 +48,11 @@ android {
             versionCode 91
         }
 
-        lightningLite {
-            buildConfigField "boolean", "FULL_VERSION", "false"
-            applicationId "acr.browser.barebones"
-            versionCode 93
-        }
+//        lightningLite {
+//            buildConfigField "boolean", "FULL_VERSION", "false"
+//            applicationId "acr.browser.barebones"
+//            versionCode 93
+//        }
     }
 
     lintOptions {
