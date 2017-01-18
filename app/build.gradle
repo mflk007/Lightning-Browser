@@ -48,7 +48,7 @@ android {
     productFlavors {
         lightningPlus {
             buildConfigField "boolean", "FULL_VERSION", "true"
-            applicationId "acr.browser.lightning"
+            applicationId "com.browser.lightning"
             versionCode 91
         }
 
@@ -108,7 +108,4 @@ dependencies {
     compile project(':libnetcipher')
     compile project(':bonsai')
     compile project(':animated-progress-bar')
-    // memory leak analysis
-    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4'
-    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4'
 }
