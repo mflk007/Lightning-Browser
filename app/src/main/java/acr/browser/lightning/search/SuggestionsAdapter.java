@@ -293,7 +293,7 @@ public class SuggestionsAdapter extends BaseAdapter implements Filterable {
 
     @NonNull
     private Observable<List<HistoryItem>> getSuggestionsForQuery(@NonNull final String query) {
-        if (mSuggestionChoice == PreferenceManager.Suggestion.SUGGESTION_GOOGLE) {
+        if (mSuggestionChoice == PreferenceManager.Suggestion.SUGGESTION_DUCK) {
             return SuggestionsManager.getObservable(query, mContext, SuggestionsManager.Source.GOOGLE);
         } else if (mSuggestionChoice == PreferenceManager.Suggestion.SUGGESTION_DUCK) {
             return SuggestionsManager.getObservable(query, mContext, SuggestionsManager.Source.DUCK);

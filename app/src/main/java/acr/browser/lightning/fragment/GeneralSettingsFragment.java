@@ -111,9 +111,6 @@ public class GeneralSettingsFragment extends LightningPreferenceFragment impleme
         downloadloc.setSummary(mDownloadLocation);
 
         switch (mPreferenceManager.getSearchSuggestionChoice()) {
-            case SUGGESTION_GOOGLE:
-                searchsSuggestions.setSummary(R.string.powered_by_google);
-                break;
             case SUGGESTION_DUCK:
                 searchsSuggestions.setSummary(R.string.powered_by_duck);
                 break;
@@ -292,9 +289,9 @@ public class GeneralSettingsFragment extends LightningPreferenceFragment impleme
     private void searchDialog() {
         AlertDialog.Builder picker = new AlertDialog.Builder(mActivity);
         picker.setTitle(getResources().getString(R.string.title_search_engine));
-        CharSequence[] chars = {getResources().getString(R.string.custom_url), "Google",
+        CharSequence[] chars = {getResources().getString(R.string.custom_url), "Baidu (Chinese)",
             "Ask", "Bing", "Yahoo", "StartPage", "StartPage (Mobile)",
-            "DuckDuckGo (Privacy)", "DuckDuckGo Lite (Privacy)", "Baidu (Chinese)",
+            "DuckDuckGo (Privacy)", "DuckDuckGo Lite (Privacy)",
             "Yandex (Russian)"};
 
         int n = mPreferenceManager.getSearchChoice();
@@ -364,17 +361,14 @@ public class GeneralSettingsFragment extends LightningPreferenceFragment impleme
         AlertDialog.Builder picker = new AlertDialog.Builder(mActivity);
         picker.setTitle(getResources().getString(R.string.search_suggestions));
 
-        int currentChoice = 2;
+        int currentChoice = 1;
 
         switch (mPreferenceManager.getSearchSuggestionChoice()) {
-            case SUGGESTION_GOOGLE:
+            case SUGGESTION_DUCK:
                 currentChoice = 0;
                 break;
-            case SUGGESTION_DUCK:
-                currentChoice = 1;
-                break;
             case SUGGESTION_NONE:
-                currentChoice = 2;
+                currentChoice = 1;
                 break;
         }
 
@@ -384,14 +378,10 @@ public class GeneralSettingsFragment extends LightningPreferenceFragment impleme
                 public void onClick(DialogInterface dialog, int which) {
                     switch (which) {
                         case 0:
-                            mPreferenceManager.setSearchSuggestionChoice(Suggestion.SUGGESTION_GOOGLE);
-                            searchsSuggestions.setSummary(R.string.powered_by_google);
-                            break;
-                        case 1:
                             mPreferenceManager.setSearchSuggestionChoice(Suggestion.SUGGESTION_DUCK);
                             searchsSuggestions.setSummary(R.string.powered_by_duck);
                             break;
-                        case 2:
+                        case 1:
                             mPreferenceManager.setSearchSuggestionChoice(Suggestion.SUGGESTION_NONE);
                             searchsSuggestions.setSummary(R.string.search_suggestions_off);
                             break;
@@ -544,7 +534,7 @@ public class GeneralSettingsFragment extends LightningPreferenceFragment impleme
                 searchUrlPicker();
                 break;
             case 1:
-                searchengine.setSummary("Google");
+                searchengine.setSummary("Baidu");
                 break;
             case 2:
                 searchengine.setSummary("Ask");
@@ -568,9 +558,6 @@ public class GeneralSettingsFragment extends LightningPreferenceFragment impleme
                 searchengine.setSummary("DuckDuckGo Lite");
                 break;
             case 9:
-                searchengine.setSummary("Baidu");
-                break;
-            case 10:
                 searchengine.setSummary("Yandex");
         }
     }

@@ -49,7 +49,7 @@ public class StartPage extends AsyncTask<Void, Void, Void> {
             + "border-radius: 2px;}</style><body> <div class=\"outer\"><div class=\"middle\"><div class=\"inner\"><img class=\"smaller\" src=\"";
 
     private static final String MIDDLE = "\" ></br></br><form onsubmit=\"return search()\" class=\"search_bar\" autocomplete=\"off\">"
-            + "<input type=\"submit\" id=\"search_submit\" value=\"Search\" ><span><input class=\"search\" type=\"text\" value=\"\" id=\"search_input\" >"
+            + "<input type=\"submit\" id=\"search_submit\" value=\"搜索\" ><span><input class=\"search\" type=\"text\" value=\"\" id=\"search_input\" >"
             + "</span></form></br></br></div></div></div><script type=\"text/javascript\">function search(){if(document.getElementById(\"search_input\").value != \"\"){window.location.href = \"";
 
     private static final String END = "\" + document.getElementById(\"search_input\").value;document.getElementById(\"search_input\").value = \"\";}return false;}</script></body></html>";
@@ -103,10 +103,10 @@ public class StartPage extends AsyncTask<Void, Void, Void> {
                 searchUrl = mPreferenceManager.getSearchUrl();
                 break;
             case 1:
-                // GOOGLE_SEARCH;
-                icon = "file:///android_asset/google.png";
-                // "https://www.google.com/images/srpr/logo11w.png";
-                searchUrl = Constants.GOOGLE_SEARCH;
+                // BAIDU_SEARCH;
+                icon = "file:///android_asset/baidu.png";
+                // "http://www.baidu.com/img/bdlogo.gif";
+                searchUrl = Constants.BAIDU_SEARCH;
                 break;
             case 2:
                 // ANDROID SEARCH;
@@ -150,12 +150,6 @@ public class StartPage extends AsyncTask<Void, Void, Void> {
                 searchUrl = Constants.DUCK_LITE_SEARCH;
                 break;
             case 9:
-                // BAIDU_SEARCH;
-                icon = "file:///android_asset/baidu.png";
-                // "http://www.baidu.com/img/bdlogo.gif";
-                searchUrl = Constants.BAIDU_SEARCH;
-                break;
-            case 10:
                 // YANDEX_SEARCH;
                 icon = "file:///android_asset/yandex.png";
                 // "http://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Yandex.svg/600px-Yandex.svg.png";
@@ -163,8 +157,8 @@ public class StartPage extends AsyncTask<Void, Void, Void> {
                 break;
             default:
                 // DEFAULT GOOGLE_SEARCH;
-                icon = "file:///android_asset/google.png";
-                searchUrl = Constants.GOOGLE_SEARCH;
+                icon = "file:///android_asset/baidu.png";
+                searchUrl = Constants.BAIDU_SEARCH;
                 break;
 
         }

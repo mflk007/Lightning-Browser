@@ -67,7 +67,6 @@ public class PreferenceManager {
     }
 
     public enum Suggestion {
-        SUGGESTION_GOOGLE,
         SUGGESTION_DUCK,
         SUGGESTION_NONE
     }
@@ -84,7 +83,7 @@ public class PreferenceManager {
     @NonNull
     public Suggestion getSearchSuggestionChoice() {
         try {
-            return Suggestion.valueOf(mPrefs.getString(Name.SEARCH_SUGGESTIONS, Suggestion.SUGGESTION_GOOGLE.name()));
+            return Suggestion.valueOf(mPrefs.getString(Name.SEARCH_SUGGESTIONS, Suggestion.SUGGESTION_DUCK.name()));
         } catch (IllegalArgumentException ignored) {
             return Suggestion.SUGGESTION_NONE;
         }
@@ -228,7 +227,7 @@ public class PreferenceManager {
 
     @NonNull
     public String getSearchUrl() {
-        return mPrefs.getString(Name.SEARCH_URL, Constants.GOOGLE_SEARCH);
+        return mPrefs.getString(Name.SEARCH_URL, Constants.BAIDU_SEARCH);
     }
 
     public boolean getTextReflowEnabled() {

@@ -623,11 +623,11 @@ public abstract class BrowserActivity extends ThemableBrowserActivity implements
                 mSearchText = mPreferences.getSearchUrl();
                 if (!mSearchText.startsWith(Constants.HTTP)
                     && !mSearchText.startsWith(Constants.HTTPS)) {
-                    mSearchText = Constants.GOOGLE_SEARCH;
+                    mSearchText = Constants.BAIDU_SEARCH;
                 }
                 break;
             case 1:
-                mSearchText = Constants.GOOGLE_SEARCH;
+                mSearchText = Constants.BAIDU_SEARCH;
                 break;
             case 2:
                 mSearchText = Constants.ASK_SEARCH;
@@ -651,9 +651,6 @@ public abstract class BrowserActivity extends ThemableBrowserActivity implements
                 mSearchText = Constants.DUCK_LITE_SEARCH;
                 break;
             case 9:
-                mSearchText = Constants.BAIDU_SEARCH;
-                break;
-            case 10:
                 mSearchText = Constants.YANDEX_SEARCH;
                 break;
         }
